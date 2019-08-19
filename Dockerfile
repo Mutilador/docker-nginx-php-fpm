@@ -1,9 +1,9 @@
-FROM php:7.1-fpm-jessie
-MAINTAINER Sylius Docker Team <docker@sylius.org>
+FROM php:7.2-fpm-stretch
+MAINTAINER Mauricio Nunes <mutila@gmail.com>
 
 ENV DEBIAN_FRONTEND noninteractive
-ENV DEBIAN_CODENAME jessie
-ENV TZ UTC
+ENV DEBIAN_CODENAME stretch
+ENV TZ UTC-3
 
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime \
 	&& echo $TZ > /etc/timezone \
@@ -40,6 +40,8 @@ RUN apt-get update \
 		libfreetype6-dev \
 		libjpeg62-turbo-dev \
 		libmcrypt-dev \
+		certbot \
+		python-certbot-apache \
 	&& apt-get autoremove -y
 
 # Sylius PHP configuration
