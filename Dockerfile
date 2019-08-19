@@ -15,7 +15,7 @@ RUN apt-get update \
         git \
         vim \
         zlib1g-dev \
-		libicu52 \
+		libicu57 \
         libicu-dev \
 		libpng-dev \
 		libfreetype6-dev \
