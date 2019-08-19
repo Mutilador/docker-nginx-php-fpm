@@ -20,8 +20,6 @@ RUN apt-get update \
 		libpng-dev \
 		libfreetype6-dev \
 		libjpeg62-turbo-dev \
-		libmcrypt4 \
-		libmcrypt-dev \
 	&& apt-get clean all \
 	&& docker-php-ext-enable \
 		opcache \
@@ -32,14 +30,12 @@ RUN apt-get update \
 		gd \
 		pdo \
 		pdo_mysql \
-		mcrypt \
 	&& apt-get purge -y \
 		zlib1g-dev \
 		libicu-dev \
 		libpng-dev \
 		libfreetype6-dev \
 		libjpeg62-turbo-dev \
-		libmcrypt-dev \
 		certbot \
 		python-certbot-apache \
 	&& apt-get autoremove -y
